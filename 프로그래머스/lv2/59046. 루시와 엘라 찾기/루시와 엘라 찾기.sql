@@ -3,4 +3,4 @@ SELECT
     name, 
     sex_upon_intake
 FROM animal_ins
-WHERE name IN ('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty')
+WHERE name IN ('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty');
