@@ -1,8 +1,12 @@
 def solution(t, p):
+    len_t = len(t)
+    len_p = len(p)
     answer = 0
+    ref = 0
     
-    for i in range(len(t) - len(p) + 1):
-        if int(t[i:i + len(p)]) <= int(p):
+    while ref <= (len_t - len_p):
+        if int(t[ref: ref + len_p]) <= int(p):
             answer += 1
+        ref += 1
     
     return answer
