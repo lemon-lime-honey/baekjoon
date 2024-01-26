@@ -19,7 +19,7 @@ def bfs():
             nrr, nrc, rmv = move(rr, rc, i)
 
             if board[nbr][nbc] != 'O':
-                if nrr == hole[0] and nrc == hole[1]:
+                if board[nrr][nrc] == 'O':
                     return mv + 1
 
                 if nbr == nrr and nbc == nrc:
@@ -29,6 +29,7 @@ def bfs():
                         nbr, nbc = nbr - dr[i], nbc - dc[i]
 
                 if (nbr, nbc, nrr, nrc) in chk: continue
+                chk.add((nbr, nbc, nrr, nrc))
                 que.append((nbr, nbc, nrr, nrc, mv + 1))
 
     return -1
@@ -51,14 +52,11 @@ dc = [1, -1, 0, 0]
 n, m = map(int, input().split())
 balls = [0, 0, 0, 0, 0]
 board = list()
-hole = [0, 0]
 
 for i in range(n):
     board.append(input().rstrip())
     for j in range(m):
-        if board[i][j] == 'O':
-            hole = [i, j]
-        elif board[i][j] == 'B':
+        if board[i][j] == 'B':
             balls[0: 2] = [i, j]
         elif board[i][j] == 'R':
             balls[2: 4] = [i, j]
