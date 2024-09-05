@@ -1,5 +1,6 @@
 import heapq, sys
 input = sys.stdin.readline
+sys.setrecursionlimit(10**6)
 
 
 def find(p):
