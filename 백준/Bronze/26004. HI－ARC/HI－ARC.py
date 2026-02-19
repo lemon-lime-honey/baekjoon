@@ -1,0 +1,10 @@
+n = int(input())
+s = input()
+
+h = s.count("H")
+i = s.count("I")
+a = s.count("A")
+r = s.count("R")
+c = s.count("C")
+
+print(min(h, i, a, r, c))
